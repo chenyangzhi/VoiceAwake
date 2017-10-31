@@ -35,7 +35,7 @@ import static com.thnuth.gondnat.voicearms.recognization.IStatus.STATUS_WAKEUP_S
 
 public class MainActivity extends AppCompatActivity {
 
-    static String TAG = "MainActivity";
+    static String TAG = MainActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

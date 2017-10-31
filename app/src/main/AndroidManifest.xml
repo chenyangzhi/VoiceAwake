@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thnuth.gondnat.voicearms">
-
+    <!-- 百度语音识别 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +23,8 @@
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.baidu.speech.APP_ID"
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
             android:value="10295117" />
         <meta-data
             android:name="com.baidu.speech.API_KEY"
@@ -27,11 +33,19 @@
             android:name="com.baidu.speech.SECRET_KEY"
             android:value="4e440d7b9666643a7e701c87b47c9a12" />
 
-        <service android:name="com.baidu.speech.VoiceRecognitionService" android:exported="false" />
+        <service
+            android:name="com.baidu.speech.VoiceRecognitionService"
+            android:exported="false" />
+        <service
+            android:name=".MouseMove.MouseMoveService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/mousemoveservice" />
+        </service>
     </application>
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 </manifest>
