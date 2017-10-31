@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">VoiceArms</string>
-    <string name="start">Start</string>
+    <string name="app_name">小鸟出装</string>
+    <string name="start">开始出装</string>
+    <string name="notice">请在\"设置->辅助功能\"里允许语音出装\n打开👆开关开始出装，请在装备前添加\"小鸟出装\"\n例如： \n  要买\"反伤刺甲\"，则需要说出\"小鸟出装反伤刺甲\"</string>
 </resources>
